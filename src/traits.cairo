@@ -86,5 +86,49 @@ mod tests {
         }
     }
 
-   
+    mod generics {
+
+        #[derive(Drop)]
+        struct Human {
+            intelligence: u32,
+            strength: u32,
+        }
+
+        #[derive(Drop)]
+        struct Orca {
+            intelligence: u32,
+            strength: u32,
+        }
+
+        trait Action<T> {
+            fn create() -> T;
+            fn train(ref self: T);
+            fn study(ref self: T);
+        }
+
+        impl HumanActionImpl of Action<Human> {
+            fn create() -> Human {
+                Human {
+                    intelligence: 20,
+                    strength: 20,
+                }
+            }
+            fn study(ref self: Human) {
+                self.intelligence += 5
+            }
+            fn train(ref self: Human) {
+                self.strength += 5
+            }
+        }
+
+        #[test]
+        fn test_create_charaters() {
+            let mut human: Human = HumanActionImpl::create();
+            human.study();
+            human.train();
+
+            assert!(human.intelligence == 25)
+            assert!(human.strength == 25)
+        }
+    } 
 }
