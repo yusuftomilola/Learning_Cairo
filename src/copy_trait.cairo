@@ -36,5 +36,20 @@ mod tests {
         assert!(person.age == 30)
     }
 
-    
+    // function to increase age
+    fn increase_age(mut person: Person) {
+        person.age += 1
+    }
+
+    #[test]
+    fn test_increase_age() {
+        let person = Person {
+             age: 40,
+             height: 200
+        };
+
+        increase_age(person);
+        assert!(person.age == 40, "The age should still be 40 as the copy is the one been mutated and not the original. Mutates will only work on the copy and not the original.");
+        assert!(person.age == 41, "The age should still be 40 as the copy is the one been mutated and not the original. Mutates will only work on the copy and not the original.");
+    }
 }
