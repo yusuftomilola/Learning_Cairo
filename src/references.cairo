@@ -46,7 +46,7 @@ mod tests {
     // FINALLY - THE WAY TO DO IT AUTOMATICALLY WITH REFERENCE ITSELF
     fn make_person_older_with_reference(ref person: Person) {
         person.age += 1;
-    
+    }
     #[test]
     fn test_make_person_older_with_reference() {
         let mut person = Person {

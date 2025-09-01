@@ -7,6 +7,7 @@ mod result_and_option;
 mod enums;
 mod snapshots;
 mod references;
+mod copy_trait;
 
 
 
