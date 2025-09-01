@@ -13,5 +13,28 @@ mod tests {
         assert!(x == 1);
     }
 
+    #[derive(Drop, Copy)]
+    struct Person {
+        age: u32,
+        height: u32
+    }
+
+    // function to get age
+    fn get_age(person: Person) -> u32 {
+        person.age
+    }
+
+    #[test]
+    fn test_get_age() {
+        let person = Person {
+            age: 30,
+            height: 150,
+        };
+
+        let age: u32 = get_age(person);
+        assert!(age == 30)
+        assert!(person.age == 30)
+    }
+
     
 }
