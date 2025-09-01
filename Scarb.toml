@@ -16,8 +16,7 @@ alexandria_math = "0.6.0"
 cairo_test = "2.12.0"
 
 [executable]
-# function = "first_cairo_tutorial::fibonacci::main"
-function = "first_cairo_tutorial::functions::example"
+function = "first_cairo_tutorial::fibonacci::main"
 
 # functions = [
 #     "first_cairo_tutorial::fibonacci::main",
