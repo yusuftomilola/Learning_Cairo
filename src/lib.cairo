@@ -10,6 +10,7 @@ mod references;
 mod copy_trait;
 mod traits;
 mod constraints;
+mod arrays;
 
 
 
